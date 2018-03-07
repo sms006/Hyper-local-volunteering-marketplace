@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+		
+  <!-- siimple style -->
+  <script>
+  
+  function validateForm() {
+        
+    var firstName = document.forms["list"]["firstname"].value;
+    var lastName = document.forms["list"]["lastname"].value;	
+    var id = document.forms["list"]["email"].value;
+	var tel = document.forms["list"]["phonenum"].value;
+	var task= document.forms["list"]["task"].value;
+	var start= document.forms["list"]["start"].value;
+    var end= document.forms["list"]["end"].value;
+	
+    if (firstName == "")
+    {
+       alert("Please enter your first name.");
+        
+        return false;
+    }
+    
+	if (lastName == "")
+    {
+        alert("Please enter your last name.");
+        
+        return false;
+    }
+	if (id == "")
+	{
+		alert("Please enter email address.");
+		return false;
+	}
+	 if (tel == "")
+	{
+		alert("Please enter your phone number.");
+		return false;
+	}
+			
+	 if (task == "")
+    {
+   	alert("Please provide a detailed description about work.");
+      
+        return false;
+    }  
+	  if (start == "")
+    {
+        alert("Please enter the start date of work.");
+        
+        return false;
+    }
+    
+    if (end == "")
+    {
+       alert("Please enter the end date of work.");
+      
+        return false;
+    }
+	
+	
+}
+
+ </script>
+  </head>
+
+<body>
+    <!-- Fixed navbar -->
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        
+        <a class="navbar-brand" href="index.html">Volunteer Work</a>
+      </div>
+      <nav class="navbar-collapse collapse">
+	  
+		<ul class="nav navbar-nav ">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+		  <li><a href="listwork.html"> List your Work </a></li>
+		   <li><a href="lookwork.html">Look for Work </a></li>
+		  
+        </ul>
+		
+        <ul class="nav navbar-nav navbar-right">
+      
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    
+  </nav>
+  </nav>
+  
+  <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	            
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>List your work here</h3>
+	                            		
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-lock"></i>
+	                        		</div>
+	                            </div>
+
+    <form name="list" onsubmit="return validateForm()" method="post"> 
+    
+	<div class="form-group">
+	
+     
+      <input type="text" class="form-control" id="firstname" placeholder="Enter your First Name" name="firstname">
+    </div>
+	<div class="form-group">
+     
+      <input type="text" class="form-control" id="lastname" placeholder="Enter your Last Name" name="lastname">
+    </div>
+  
+	
+	
+	<div class="form-group">
+	
+		<select class="form-control" id= "select" name="work">
+			
+			<option>Choose Type of Work</option>
+			<option>Domestic Work</option>
+			<option>Farming</option>
+			<option>Garden Work</option>
+			<option>Help Disabled People</option>
+		</select>
+	</div>
+	
+	
+		<div class="form-group">
+     
+      <input type="text" class="form-control" id="task" placeholder="Enter Task Decription" name="task">
+    </div>
+	<div class="form-group">
+   
+      <input type="text" class="form-control" id="start" placeholder="Start Date" name="start">
+    </div>
+	<div class="form-group">
+      
+      <input type="text" class="form-control" id="end" placeholder="End Date" name="end">
+		
+	</div>
+	<button type="submit" class="btn">Submit</button>
+  
+    </form>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ <footer>
+        	<div class="container">
+        		<div class="row">
+        			
+        			<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>&copy;Volunteer Team 
+        					</p>
+        			</div>
+        			
+        		</div>
+        	</div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+       
+</body>
+</html>
