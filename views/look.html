@@ -149,12 +149,12 @@
                         function initialize() {
                             var initialLat = $('.search_latitude').val();
                             var initialLong = $('.search_longitude').val();
-                            initialLat = initialLat?initialLat:36.169648;
-                            initialLong = initialLong?initialLong:-115.141000;
+                            initialLat = initialLat?initialLat:49.40260643821398;
+                            initialLong = initialLong?initialLong:8.672605161376964;
 
                             var latlng = new google.maps.LatLng(initialLat, initialLong);
                             var options = {
-                                zoom: 16,
+                                zoom: 10,
                                 center: latlng,
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                             };
