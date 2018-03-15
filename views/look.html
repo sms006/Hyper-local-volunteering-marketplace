@@ -1,10 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+
+    <link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ4S0LOhaQh0-WxvsWg5cFPzTuPJt_E3U"></script>
+
+    <style>
+        #geomap{
+            width: 160%;
+            height: 500px;
+        }
+
+    </style>
 </head>
+
 <body>
 
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="index.html">Volunteer Work</a>
+        </div>
+        <nav class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav ">
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="list.html"> List your Work </a></li>
+                <li><a href="look.html">Look for Work </a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <!--/.nav-collapse -->
+
+</nav>
+
+<!-- Top content -->
+<div class="top-content">
+
+    <div class="inner-bg">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-5">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Looking for work?</h3>
+                                <p>Please enter the below details</p>
+                            </div>
+
+                        </div>
+                        <div class="form-bottom">
+
+                            <form name="look" role="form" action="/submitloc" onsubmit="validateWork()" method="get">
+
+                                <div class="form-group">
+
+                                    <select class="form-control">
+
+                                        <option value="choose">Choose Type of Work</option>
+                                        <option value="domestic">Domestic Work</option>
+                                        <option value="farming">Farming</option>
+                                        <option value="garden">Garden Work</option>
+                                        <option value="disabled">Help Disabled People</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" id="select" label="Radius">
+                                        <option>Choose Radius</option>
+                                        <option value="50" >50 kms</option>
+                                        <option value="30">30 kms</option>
+                                        <option value="20">20 kms</option>
+                                        <option value="10">10 kms</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                     <input type="text" class="search_addr" placeholder="Address" size="42">
+
+
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="text"  class="search_latitude" size="42" placeholder="Latitude">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="search_longitude" size="42" placeholder="Longitude">
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+
+                            </form>
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-1"></div>
+
+
+                <div class="col-sm-5">
+                    <form>
+                        <div class="form-group input-group">
+                            <input type="text" id="search_location" class="form-control" placeholder="Search location">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default get_map" type="submit">
+                                    Locate
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="geomap"></div>
+
+
+                    <script>
+                        var geocoder;
+                        var map;
+                        var marker;
+
+                        /*
+                         * Google Map with marker
+                         */
+                        function initialize() {
+                            var initialLat = $('.search_latitude').val();
+                            var initialLong = $('.search_longitude').val();
+                            initialLat = initialLat?initialLat:36.169648;
+                            initialLong = initialLong?initialLong:-115.141000;
+
+                            var latlng = new google.maps.LatLng(initialLat, initialLong);
+                            var options = {
+                                zoom: 16,
+                                center: latlng,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            };
+
+                            map = new google.maps.Map(document.getElementById("geomap"), options);
+
+                            geocoder = new google.maps.Geocoder();
+
+                            marker = new google.maps.Marker({
+                                map: map,
+                                draggable: true,
+                                position: latlng
+                            });
+
+                            google.maps.event.addListener(marker, "dragend", function () {
+                                var point = marker.getPosition();
+                                map.panTo(point);
+                                geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+                                    if (status == google.maps.GeocoderStatus.OK) {
+                                        map.setCenter(results[0].geometry.location);
+                                        marker.setPosition(results[0].geometry.location);
+                                        $('.search_addr').val(results[0].formatted_address);
+                                        $('.search_latitude').val(marker.getPosition().lat());
+                                        $('.search_longitude').val(marker.getPosition().lng());
+                                    }
+                                });
+                            });
+
+                        }
+
+                        $(document).ready(function () {
+                            //load google map
+                            initialize();
+
+                            /*
+                             * autocomplete location search
+                             */
+                            var PostCodeid = '#search_location';
+                            $(function () {
+                                $(PostCodeid).autocomplete({
+                                    source: function (request, response) {
+                                        geocoder.geocode({
+                                            'address': request.term
+                                        }, function (results, status) {
+                                            response($.map(results, function (item) {
+                                                return {
+                                                    label: item.formatted_address,
+                                                    value: item.formatted_address,
+                                                    lat: item.geometry.location.lat(),
+                                                    lon: item.geometry.location.lng()
+                                                };
+                                            }));
+                                        });
+                                    },
+                                    select: function (event, ui) {
+                                        $('.search_addr').val(ui.item.value);
+                                        $('.search_latitude').val(ui.item.lat);
+                                        $('.search_longitude').val(ui.item.lon);
+                                        var latlng = new google.maps.LatLng(ui.item.lat, ui.item.lon);
+                                        marker.setPosition(latlng);
+                                        initialize();
+                                    }
+                                });
+                            });
+
+                            /*
+                             * Point location on google map
+                             */
+                            $('.get_map').click(function (e) {
+                                var address = $(PostCodeid).val();
+                                geocoder.geocode({'address': address}, function (results, status) {
+                                    if (status == google.maps.GeocoderStatus.OK) {
+                                        map.setCenter(results[0].geometry.location);
+                                        marker.setPosition(results[0].geometry.location);
+                                        $('.search_addr').val(results[0].formatted_address);
+                                        $('.search_latitude').val(marker.getPosition().lat());
+                                        $('.search_longitude').val(marker.getPosition().lng());
+                                    } else {
+                                        alert("Geocode was not successful for the following reason: " + status);
+                                    }
+                                });
+                                e.preventDefault();
+                            });
+
+                            //Add listener to marker for reverse geocoding
+                            google.maps.event.addListener(marker, 'drag', function () {
+                                geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+                                    if (status == google.maps.GeocoderStatus.OK) {
+                                        if (results[0]) {
+                                            $('.search_addr').val(results[0].formatted_address);
+                                            $('.search_latitude').val(marker.getPosition().lat());
+                                            $('.search_longitude').val(marker.getPosition().lng());
+                                        }
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="footer-border"></div>
+                <p>&copy;Volunteer Team
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- Javascript -->
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+
 </body>
+
 </html>
