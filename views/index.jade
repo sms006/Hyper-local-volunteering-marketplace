@@ -1,5 +1,48 @@
-extends restemplate
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500')
+    link(rel='stylesheet', href='assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='assets/css/form-elements.css')
+    link(rel='stylesheet', href='assets/css/style.css')
+  body
+    // Fixed navbar
+    nav.navbar.navbar-inverse
+      .container
+        .navbar-header
+          a.navbar-brand(href='index.html') Volunteer Work
+        nav.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li
+              a(href='about.html') About
+            li
+              a(href='list.html')  List your Work 
+            li
+              a(href='look.html') Look for Work 
+      // /.nav-collapse
+    .top-content
+      .inner-bg
+        .container
+          .row
+            #header
+              .container
+                .row
+                  .col-lg-6
+                    h1  Some Message here
+    footer
+      .container
+        .row
+          .col-sm-8.col-sm-offset-2
+            .footer-border
+            p
+              | ©Volunteer Team
+    // Javascript
+    script(src='assets/js/jquery-1.11.1.min.js')
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='assets/js/jquery.backstretch.min.js')
+    script(src='assets/js/scripts.js')
