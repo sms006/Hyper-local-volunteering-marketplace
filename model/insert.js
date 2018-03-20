@@ -10,13 +10,13 @@ var connection = mysql.createConnection({
 });
 
 module.exports = {
-    //this function inserts the parameters sent by the get request into the db
     putopps: function (nm,em,wd,add,lat,lng,tow) {
+
+        var sql1 = 'insert into employer set ?';
+        var sql2 = 'insert into marketplace set ?'
 
         connection.connect(function(err) {
             if (err) throw err;
-            //Inserting employer data into the employer table
-            var sql1 = "insert into employer (name,email) values ("+"'"+nm+"'"+","+"'"+em+"'"+");";
 
             connection.query(sql1, function (err, results) {
                 if (err) throw err;
@@ -24,27 +24,13 @@ module.exports = {
                 console.log(results);
 
             });
-            //Retrieving employer ID from employer table
-            var sql3 = "select eid from employer where email="+"'"+em+"'";
-
-            connection.query(sql3, function (err, results) {
-                if (err) throw err;
-
-                setrest(results[0].eid)
-
-             });
-
-        var setrest= function(empid) {
-            //Inserting volunteering task details into the marketplace table
-            var sql2 = "insert into marketplace(taskid,employerid,work_description,address,lat,lng) values " +
-                "(" + tow + "," + empid + ",'" + wd + "','" + add + "'," + lat + "," + lng + ");";
 
             connection.query(sql2, function (err, results) {
                 if (err) throw err;
+
                 console.log(results);
 
             });
-        }
         });
     }
 };
