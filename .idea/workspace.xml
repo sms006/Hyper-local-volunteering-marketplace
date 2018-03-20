@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f3ebf0c-d473-4ff5-8809-2fb77163d5f8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sad_test1.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/displaytable-reo.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dbtohtml.js" afterPath="$PROJECT_DIR$/dbtohtml.js" />
-      <change beforePath="$PROJECT_DIR$/model/insert.js" afterPath="$PROJECT_DIR$/model/insert.js" />
-      <change beforePath="$PROJECT_DIR$/routes/list.js" afterPath="$PROJECT_DIR$/routes/list.js" />
-      <change beforePath="$PROJECT_DIR$/viewkdkd.js" afterPath="$PROJECT_DIR$/viewkdkd.js" />
-      <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" afterPath="$PROJECT_DIR$/views/assets/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
-      <change beforePath="$PROJECT_DIR$/views/look.html" afterPath="$PROJECT_DIR$/views/look.html" />
-    </list>
+    <list default="true" id="1f3ebf0c-d473-4ff5-8809-2fb77163d5f8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -244,12 +232,12 @@
       <workItem from="1520698679277" duration="3342000" />
       <workItem from="1520938478408" duration="14229000" />
       <workItem from="1521120420252" duration="171000" />
-      <workItem from="1521120612148" duration="40174000" />
+      <workItem from="1521120612148" duration="40327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59937000" />
+    <option name="totallyTimeSpent" value="60090000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
