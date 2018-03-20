@@ -10,7 +10,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 
-
     <link rel="stylesheet" href="assets/css/form-elements.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -37,16 +36,18 @@
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
+            <img src="assets/images/logo2.png" alt="logo"/>
 
-            <a class="navbar-brand" href="index.html">Volunteer Work</a>
         </div>
+
+
         <nav class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav ">
-                <li><a href="about.html">About</a></li>
 
+                <li><a href="index.html"> Home </a></li>
                 <li><a href="list.html"> List your Work </a></li>
-                <li><a href="look.html">Look for Work </a></li>
+                <li><a href="look.html">Help your neighborhood </a></li>
 
             </ul>
         </nav>
@@ -67,7 +68,7 @@
                     <div class="form-box">
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Looking for work?</h3>
+                                <h3>See who need help in your community</h3>
                                 <p>Please enter the below details</p>
                             </div>
 
@@ -88,13 +89,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" id="select" label="Radius">
-                                        <option>Choose Radius</option>
-                                        <option value="50" >50 kms</option>
-                                        <option value="30">30 kms</option>
-                                        <option value="20">20 kms</option>
-                                        <option value="10">10 kms</option>
-                                    </select>
+                                    <input type="number"  class="form-control" placeholder="Enter the Radius" id="radius" name="radius">
 
                                 </div>
                                 <div class="form-group">
@@ -149,12 +144,12 @@
                         function initialize() {
                             var initialLat = $('.search_latitude').val();
                             var initialLong = $('.search_longitude').val();
-                            initialLat = initialLat?initialLat:36.169648;
-                            initialLong = initialLong?initialLong:-115.141000;
+                            initialLat = initialLat?initialLat:49.40260643821398;
+                            initialLong = initialLong?initialLong:8.672605161376964;
 
                             var latlng = new google.maps.LatLng(initialLat, initialLong);
                             var options = {
-                                zoom: 16,
+                                zoom: 10,
                                 center: latlng,
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                             };
@@ -265,10 +260,12 @@
 
 <!-- Footer -->
 <footer>
+
+    <div class="footer">
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-8 col-sm-offset-2">
+
                 <div class="footer-border"></div>
                 <p>&copy;Volunteer Team
                 </p>
@@ -276,13 +273,10 @@
 
         </div>
     </div>
+
 </footer>
 
-<!-- Javascript -->
 
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.backstretch.min.js"></script>
-<script src="assets/js/scripts.js"></script>
 
 </body>
 

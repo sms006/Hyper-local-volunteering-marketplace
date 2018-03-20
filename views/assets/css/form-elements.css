@@ -1,6 +1,6 @@
 
 input[type="text"], 
-input[type="password"], 
+
 textarea, 
 textarea.form-control {
 	height: 50px;
@@ -36,7 +36,7 @@ textarea.form-control:focus {
     -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
 }
 
-input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, 
+input[type="text"]:-moz-placeholder, input[type="name"]:-moz-placeholder,
 textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
 
 input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, 

@@ -1,11 +1,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+
     font-size: 16px;
     font-weight: 300;
     color: #888;
     line-height: 30px;
     text-align: center;
+
 }
 
 strong { font-weight: 500; }
@@ -20,7 +22,7 @@ h1, h2 {
 	margin-top: 10px;
 	font-size: 38px;
     font-weight: 100;
-    color: #555;
+    color: #1fa3eb;
     line-height: 50px;
 }
 
@@ -31,7 +33,13 @@ h3 {
     line-height: 30px;
 }
 
-img { max-width: 100%; }
+img
+
+{
+	max-width: 100%;
+	
+
+}
 
 ::-moz-selection { background: #19b9e7; color: #fff; text-shadow: none; }
 ::selection { background: #19b9e7; color: #fff; text-shadow: none; }
@@ -118,7 +126,7 @@ img { max-width: 100%; }
 	overflow: hidden;
 	padding: 0 25px 15px 25px;
 	background: #444;
-	background: rgba(0, 0, 0, 0.35);
+	background: #778899;
 	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 	text-align: left;
 }
@@ -146,7 +154,7 @@ img { max-width: 100%; }
 .form-bottom {
 	padding: 25px 25px 30px 25px;
 	background: #444;
-	background: rgba(0, 0, 0, 0.3);
+	background:	#778899;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: left;
 }
@@ -163,31 +171,21 @@ img { max-width: 100%; }
 	border-color: #19b9e7;
 }
 
-.social-login {
-	margin-top: 35px;
-}
-
-.social-login h3 {
-	color: #fff;
-}
-
-.social-login-buttons {
-	margin-top: 25px;
-}
-
-.middle-border {
-	min-height: 300px;
-	margin-top: 170px;
-	border-right: 1px solid #fff;
-	border-right: 1px solid rgba(255, 255, 255, 0.6);
-}
 
 
 /***** Footer *****/
 
 footer {
-	padding-bottom: 70px;
+	padding-bottom: 1px;
 	color: #fff;
+
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	color: white;
+	text-align: center;
 }
 
 footer .footer-border {
@@ -206,22 +204,4 @@ footer a {
 footer a:hover, footer a:focus { color: #fff; border-bottom: 1px dotted #fff; }
 
 
-/***** Media queries *****/
-
-@media (min-width: 992px) and (max-width: 1199px) {}
-
-@media (min-width: 768px) and (max-width: 991px) {}
-
-@media (max-width: 767px) {
-	
-	.middle-border { min-height: auto; margin: 65px 30px 0 30px; border-right: 0; 
-						border-top: 1px solid #fff; border-top: 1px solid rgba(255, 255, 255, 0.6); }
-	
-}
-
-@media (max-width: 415px) {
-	
-	h1, h2 { font-size: 32px; }
-
-}
 
