@@ -9,11 +9,10 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/stylesheets/form-elements.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
 
-    <link rel="stylesheet" href="assets/css/form-elements.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -23,8 +22,8 @@
 
     <style>
         #geomap{
-            width: 160%;
-            height: 500px;
+            width: 175%;
+            height: 532px;
         }
 
     </style>
@@ -35,19 +34,17 @@
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse">
     <div class="container">
-        <div class="navbar-header">
-            <img src="assets/images/logo2.png" alt="logo"/>
-
-        </div>
-
 
         <nav class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <img src="../public/images/logo2.png" alt="logo"/>
+            </ul>
 
-            <ul class="nav navbar-nav ">
+            <ul class="nav navbar-nav navbar-right">
 
                 <li><a href="index.html"> Home </a></li>
                 <li><a href="list.html"> List your Work </a></li>
-                <li><a href="look.html">Help your neighborhood </a></li>
+                <li><a href="look.html">Help your Neighborhood</a></li>
 
             </ul>
         </nav>
@@ -79,7 +76,7 @@
 
                                 <div class="form-group">
 
-                                    <select class="form-control">
+                                    <select class="form-control" id="work">
 
                                         <option value="choose">Choose Type of Work</option>
                                         <option value="domestic">Domestic Work</option>
@@ -87,6 +84,7 @@
                                         <option value="garden">Garden Work</option>
                                         <option value="disabled">Help Disabled People</option>
                                     </select>
+
                                 </div>
                                 <div class="form-group">
                                     <input type="number"  class="form-control" placeholder="Enter the Radius" id="radius" name="radius">
@@ -99,10 +97,10 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="text"  class="search_latitude" size="42" placeholder="Latitude">
+                                    <input type="text"  class="search_latitude" size="42" placeholder="Latitude" name="latitude">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="search_longitude" size="42" placeholder="Longitude">
+                                    <input type="text" class="search_longitude" size="42" placeholder="Longitude" name="longitude">
                                 </div>
                                 <button type="submit" class="btn btn-default">Submit</button>
 
@@ -116,7 +114,7 @@
 
                 </div>
 
-                <div class="col-sm-1"></div>
+
 
 
                 <div class="col-sm-5">
@@ -262,17 +260,12 @@
 <footer>
 
     <div class="footer">
-    <div class="container">
-        <div class="row">
 
-
-                <div class="footer-border"></div>
                 <p>&copy;Volunteer Team
                 </p>
             </div>
 
-        </div>
-    </div>
+
 
 </footer>
 
