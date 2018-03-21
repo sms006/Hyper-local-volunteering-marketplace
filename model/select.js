@@ -14,13 +14,17 @@ var connection = mysql.createConnection({
 
 module.exports = {
     //This function catches the search parameters given by the user namely the radius, latitude and longitude
-    findopps: function (rad,lat,lng) {
+    findopps: function (rad,lat,lng,tow) {
 
         //This sql query looks for entries in the table which are within the radius by using a haversine formula
-       var sql = 'SELECT name,email,work_description, address, ( 3959 * acos( cos( radians(49.4054581) ) ' +
-           '* cos( radians( lat ) ) * cos( radians( lng ) - radians(8.6907999) ) + sin( radians(49.4054581) ) ' +
-           '* sin( radians( lat ) ) ) ) AS distance FROM marketplace JOIN employer on ' +
-           'employer.eid = marketplace.employerid HAVING distance < 3 ORDER BY distance';
+       var sql = 'SELECT name,email,work_description, address, ( 3959 * acos( cos( radians('+lat+') ) ' +
+           '* cos( radians( lat ) ) * cos( radians( lng ) - radians('+lng+') ) + sin( radians('+lat+') ) ' +
+           '* sin( radians( lat ) ) ) ) AS distance ' +
+           'FROM marketplace ' +
+           'JOIN employer on employer.eid = marketplace.employerid ' +
+           'where marketplace.taskid = '+tow+
+           ' HAVING distance < '+rad +
+           ' ORDER BY distance';
 
         //connecting to the db
         connection.connect(function(err) {
