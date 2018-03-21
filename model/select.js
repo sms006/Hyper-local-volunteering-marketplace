@@ -2,6 +2,7 @@ var express = require('express');
 var look = require('../routes/look');
 var mysql = require('mysql');
 
+
 // connect to the MySQL db on localhost
 var connection = mysql.createConnection({
     host     : 'localhost',
@@ -16,9 +17,10 @@ module.exports = {
     findopps: function (rad,lat,lng) {
 
         //This sql query looks for entries in the table which are within the radius by using a haversine formula
-       var sql = 'SELECT id, name, address, lat, lng, ( 3959 * acos( cos( radians('+lat+') ) * cos( radians( lat ) )' +
-          ' * cos( radians( lng ) - radians('+lng+') ) + sin( radians('+lat+') ) * sin( radians( lat ) ) ) )' +
-        ' AS distance FROM markers HAVING distance < ' + rad + ' ORDER BY distance LIMIT 0 , 20';
+       var sql = 'SELECT name,email,work_description, address, ( 3959 * acos( cos( radians(49.4054581) ) ' +
+           '* cos( radians( lat ) ) * cos( radians( lng ) - radians(8.6907999) ) + sin( radians(49.4054581) ) ' +
+           '* sin( radians( lat ) ) ) ) AS distance FROM marketplace JOIN employer on ' +
+           'employer.eid = marketplace.employerid HAVING distance < 3 ORDER BY distance';
 
         //connecting to the db
         connection.connect(function(err) {
