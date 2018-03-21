@@ -7,10 +7,11 @@
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 
-    <link rel="stylesheet" href="assets/css/form-elements.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/stylesheets/form-elements.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -22,7 +23,7 @@
     <style>
         #geomap{
             width: 175%;
-            height: 750px;
+            height: 652px;
         }
 
     </style>
@@ -64,19 +65,17 @@
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse">
     <div class="container">
-        <div class="navbar-header">
-
-            <img src="assets/images/logo2.png" alt="logo"/>
-        </div>
-
 
         <nav class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <img src="../public/images/logo2.png" alt="logo"/>
+            </ul>
 
-            <ul class="nav navbar-nav ">
+            <ul class="nav navbar-nav navbar-right">
 
                 <li><a href="index.html"> Home </a></li>
                 <li><a href="list.html"> List your Work </a></li>
-                <li><a href="look.html"> Help your Neighborhood</a></li>
+                <li><a href="look.html">Help your Neighborhood</a></li>
 
             </ul>
         </nav>
@@ -116,13 +115,14 @@
 
                                 <div class="form-group">
 
-                                    <select class="form-control" required>
+                                    <select class="form-control" id="choose"  name="choose" required>
 
-                                        <option value="" selected hidden>Choose Type of Work</option>
-                                        <option >Domestic Work</option>
-                                        <option>Farming</option>
-                                        <option>Garden Work</option>
-                                        <option>Help Disabled People</option>
+                                        <option value="choose">Choose Type of Work</option>
+                                        <option value="domestic">Domestic Work</option>
+                                        <option value="farming">Farming</option>
+                                        <option value="garden">Garden Work</option>
+                                        <option value="disabled">Help Disabled People</option>
+
                                     </select>
                                 </div>
 
@@ -301,24 +301,15 @@
 
 <footer>
     <div class="footer">
-    <div class="container">
-        <div class="row">
 
-            <div class="col-sm-8 col-sm-offset-2">
-                <div class="footer-border"></div>
+
                 <p>&copy;Volunteer Team
                 </p>
-            </div>
 
-        </div>
-    </div>
+
+
     </div>
 </footer>
-
-<!-- Javascript -->
-
-
-
 
 </body>
 </html>
