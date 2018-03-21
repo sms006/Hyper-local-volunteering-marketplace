@@ -25,7 +25,6 @@
             width: 175%;
             height: 532px;
         }
-
     </style>
 </head>
 
@@ -44,7 +43,7 @@
 
                 <li><a href="index.html"> Home </a></li>
                 <li><a href="list.html"> List your Work </a></li>
-                <li><a href="look.html">Help your Neighborhood</a></li>
+                <li><a href="look.html">Help in your Neighborhood</a></li>
 
             </ul>
         </nav>
@@ -65,7 +64,7 @@
                     <div class="form-box">
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>See who need help in your community</h3>
+                                <h3>See who needs help in your community</h3>
                                 <p>Please enter the below details</p>
                             </div>
 
@@ -76,13 +75,14 @@
 
                                 <div class="form-group">
 
-                                    <select class="form-control" id="work">
+                                    <select class="form-control" id="choose" name="choose" required>
 
-                                        <option value="choose">Choose Type of Work</option>
-                                        <option value="domestic">Domestic Work</option>
-                                        <option value="farming">Farming</option>
-                                        <option value="garden">Garden Work</option>
-                                        <option value="disabled">Help Disabled People</option>
+                                        <option value="0">Choose Type of Work</option>
+                                        <option value="1">Disabled Assisstance</option>
+                                        <option value="2">Domestic Help</option>
+                                        <option value="3">Community event organizing</option>
+                                        <option value="4">Environmental voluntary work</option>
+
                                     </select>
 
                                 </div>
@@ -91,7 +91,7 @@
 
                                 </div>
                                 <div class="form-group">
-                                     <input type="text" class="search_addr" placeholder="Address" size="42">
+                                    <input type="text" class="search_addr" placeholder="Address" size="42">
 
 
 
@@ -135,7 +135,6 @@
                         var geocoder;
                         var map;
                         var marker;
-
                         /*
                          * Google Map with marker
                          */
@@ -144,24 +143,19 @@
                             var initialLong = $('.search_longitude').val();
                             initialLat = initialLat?initialLat:49.40260643821398;
                             initialLong = initialLong?initialLong:8.672605161376964;
-
                             var latlng = new google.maps.LatLng(initialLat, initialLong);
                             var options = {
                                 zoom: 10,
                                 center: latlng,
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                             };
-
                             map = new google.maps.Map(document.getElementById("geomap"), options);
-
                             geocoder = new google.maps.Geocoder();
-
                             marker = new google.maps.Marker({
                                 map: map,
                                 draggable: true,
                                 position: latlng
                             });
-
                             google.maps.event.addListener(marker, "dragend", function () {
                                 var point = marker.getPosition();
                                 map.panTo(point);
@@ -175,13 +169,10 @@
                                     }
                                 });
                             });
-
                         }
-
                         $(document).ready(function () {
                             //load google map
                             initialize();
-
                             /*
                              * autocomplete location search
                              */
@@ -212,7 +203,6 @@
                                     }
                                 });
                             });
-
                             /*
                              * Point location on google map
                              */
@@ -231,7 +221,6 @@
                                 });
                                 e.preventDefault();
                             });
-
                             //Add listener to marker for reverse geocoding
                             google.maps.event.addListener(marker, 'drag', function () {
                                 geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
@@ -261,9 +250,9 @@
 
     <div class="footer">
 
-                <p>&copy;Volunteer Team
-                </p>
-            </div>
+        <p>&copy;Volunteer Team
+        </p>
+    </div>
 
 
 
