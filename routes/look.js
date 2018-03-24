@@ -19,3 +19,5 @@ getloc.get('/submitloc', function (req, res) {
     });
     //console.log(getopps.sendhtml());
 });
+
+module.exports = getloc;
