@@ -27,6 +27,7 @@ module.exports.reo = '<html>\n' +
 module.exports.otrotd = '<tr><td>';
 module.exports.ctdotd = '</td><td>';
 module.exports.ctdctr = '</td></tr>';
+
 module.exports.tablehead =     '<nav class="navbar navbar-inverse">\n' +
     '<div class="container"><div class="navbar-header"></div>\n' +
     '<nav class="navbar-collapse collapse">\n' +
@@ -35,7 +36,8 @@ module.exports.tablehead =     '<nav class="navbar navbar-inverse">\n' +
     '<li><a href="list.html"> List your Work </a></li>\n' +
     '<li><a href="look.html">Help your neighborhood </a></li>\n' +
     '</ul></nav></div></nav>\n' +
- '<table class="table table-striped" border="1"><tr><th>Nr.</th><th>Work Id</th><th>Task Id</th><th>Employeer Id</th><th>Work Description</th><th>Address</th><th>Latitude</th><th>Langitude</th></tr>';
+    '<table class="table table-striped" border="1"><tr><th>Number</th><th>Listed by</th><th>email</th><th>Task description</th><th>address</th></tr>';
+
 module.exports.tableend = '</table><footer>\n' +
     '\n' +
     '    <div class="footer">\n' +
@@ -52,5 +54,4 @@ module.exports.tableend = '</table><footer>\n' +
     '    </div>\n' +
     '\n' +
     '</footer>';
-
 
