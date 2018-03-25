@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,9 @@
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 
-    <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/stylesheets/form-elements.css">
-    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/form-elements.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,7 +31,7 @@
         function validateForm() {
             var name = document.forms["list"]["name"].value;
             var task= document.forms["list"]["task"].value;
-            var emai = document.forms["list"]["email"].value;
+            var email = document.forms["list"]["email"].value;
             if (name == "")
             {
                 alert("Please enter your first name.");
@@ -57,14 +58,14 @@
 
         <nav class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <img src="../public/images/logo2.png" alt="logo"/>
+                <img src="/images/logo2.png" alt="logo"/>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
                 <li><a href="index.html"> Home </a></li>
                 <li><a href="list.html"> List your Work </a></li>
-                <li><a href="look.html">Help your Neighborhood</a></li>
+                <li><a href="look.html">Help in your Neighborhood</a></li>
 
             </ul>
         </nav>
