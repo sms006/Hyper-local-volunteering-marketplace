@@ -12,6 +12,9 @@ getemp.get('/setopportunity', function (req, res) {
     var lngi = req.query.lng;
     var typeofwork = req.query.choose;
     putopps.putopps(name,email,workd,address,lati,lngi,typeofwork);
+    res.send( "Your opportunity has been listed. " +
+        "An interested volunteer will contact you soon");
+
 
 });
 
