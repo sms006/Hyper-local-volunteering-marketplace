@@ -92,7 +92,7 @@
                         </div>
                         <div class="form-bottom">
 
-                            <form data-toggle="validator" name="list" role="form" onsubmit="return validateForm()" method="GET">
+                            <form data-toggle="validator" name="list" role="form" action="/setopportunity" onsubmit="return validateForm()" method="GET">
 
                                 <div class="form-group">
 
@@ -122,22 +122,15 @@
                                     <input type="text" class="form-control" id="task" placeholder="Enter Task Decription" name="task" required>
                                 </div>
 
-
                                 <div class="form-group">
-
-                                    <input type="text" name="email" placeholder="Email Address" class="form-control" id="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="search_addr" placeholder="Enter your address in search locator" size="42" required="required">
-
-
+                                    <input type="text" class="search_addr" name="address" placeholder="Enter your address in search locator" size="42" required="required">
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="text"  class="search_latitude" size="42" placeholder="Latitude" required="required">
+                                    <input type="text"  class="search_latitude" size="42" name="lat" placeholder="Latitude" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="search_longitude" size="42" placeholder="Longitude" required="required">
+                                    <input type="text" class="search_longitude" size="42" name="lng" placeholder="Longitude" required="required">
                                 </div>
 
                                 <button type="submit" class="btn btn-default">Submit</button>
@@ -145,10 +138,6 @@
 
                             </form>
                         </div>
-
-
-
-
                     </div>
                 </div>
 
